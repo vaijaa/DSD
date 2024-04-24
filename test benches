@@ -1,0 +1,123 @@
+half adder test bench
+
+	module ha_tb;
+
+	reg a;
+	reg b;
+
+	
+	wire s;
+	wire c;
+
+	// Instantiate the Unit Under Test (UUT)
+	halfadder uut (
+		.a(a), 
+		.b(b), 
+		.s(s), 
+		.c(c)
+	);
+
+	initial begin
+		// Initialize Inputs
+		
+		a = 0;
+		b = 0;
+		#100;
+		a = 0;
+		b = 1;
+		#100;
+		a = 1;
+		b = 0;
+		#100;
+		a = 1;
+		b = 1;
+		#100;
+      
+
+	end
+      
+endmodule
+
+rca test bench
+
+module rca_tbb;
+
+	// Inputs
+	reg [3:0] a;
+	reg [3:0] b;
+	reg cin;
+
+	// Outputs
+	wire [3:0] s;
+	wire cout;
+
+	// Instantiate the Unit Under Test (UUT)
+	rca_h uut (
+		.a(a), 
+		.b(b), 
+		.cin(cin), 
+		.s(s), 
+		.cout(cout)
+	);
+	initial
+	cin=0;
+
+
+	initial 
+	a=0;
+	always #100 a=a+1;
+	initial
+	b=0;
+	always #100 b=b+1;
+	
+      
+endmodule
+
+
+test bench for fulll adder
+
+
+
+module faa_tb;
+
+	// Inputs
+	reg a;
+	reg b;
+	reg cin;
+
+	// Outputs
+	wire s;
+	wire cout;
+
+	// Instantiate the Unit Under Test (UUT)
+	faa uut (
+		.a(a), 
+		.b(b), 
+		.cin(cin), 
+		.s(s), 
+		.cout(cout)
+	);
+
+	initial 
+		cin=0;
+	initial begin
+	   a = 0;
+		b = 0;
+	   #100;
+		
+		 a = 0;
+		b = 1;
+	   #100;
+	
+
+      a = 1;
+		b = 0;
+	   #100;
+	
+      a = 1;
+		b = 1;
+	   #100;
+end
+endmodule
+
+
